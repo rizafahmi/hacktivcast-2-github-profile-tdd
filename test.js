@@ -10,14 +10,15 @@ describe("First test", () => {
 
 describe("A simple way to look at GitHub profile", () => {
 
-  it("Connect to the GitHub API", () => {
+  it("Connect to the GitHub API and return a string", (done) => {
     app.getProfile('rizafahmi', (error, profile) => {
-      if (!error)
+      if (!error){
         assert.equal(profile.name, "Riza Fahmi")
+      } else {
+        assert.isNull(error)
+      }
+      done()
     })
-  })
-  it("not connect to github api", () => {
-    assert.throws(app.getProfile('testaja'))
   })
   it("Read the data")
   it("Parse the data")
