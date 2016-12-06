@@ -11,11 +11,13 @@ describe("First test", () => {
 describe("A simple way to look at GitHub profile", () => {
 
   it("Connect to the GitHub API and return a string", (done) => {
-    app.getProfile('rizafahmi', (error, profile) => {
-      if (!error){
+    app.getProfile('rizafahmi22', (error, profile) => {
+      if (!error) {
         assert.equal(profile.name, "Riza Fahmi")
-      } else {
         assert.isNull(error)
+      } else {
+        // TODO: buat test case terpisah
+        assert.isNotNull(error)
       }
       done()
     })

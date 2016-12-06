@@ -2,9 +2,8 @@
 
 const https = require('https')
 
-
 let getProfile = (username, callback) => {
-  const options = {
+	const options = {
     hostname: `api.github.com`,
     port: 443,
     path: `/users/${username}`,
@@ -25,7 +24,7 @@ let getProfile = (username, callback) => {
         callback(null, profile)
 
       } else {
-        callback("error")
+        callback("Error getting the data")
       }
     })
 
