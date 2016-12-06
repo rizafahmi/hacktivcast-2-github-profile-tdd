@@ -1,0 +1,15 @@
+{
+  "name": "github-profile-tdd",
+  "version": "1.0.0",
+  "description": "GitHub profile app, using TDD",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Riza Fahmi",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
