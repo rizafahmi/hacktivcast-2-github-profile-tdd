@@ -2,7 +2,7 @@
 
 const https = require('https')
 
-let getProfile = (username, callback) => {
+let get = (username, callback) => {
 	const options = {
     hostname: `api.github.com`,
     port: 443,
@@ -35,5 +35,5 @@ let getProfile = (username, callback) => {
 }
 
 module.exports = {
-  getProfile: getProfile
+  get: get
 }
