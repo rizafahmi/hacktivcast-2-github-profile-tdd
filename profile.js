@@ -3,7 +3,7 @@
 const https = require('https')
 
 let get = (username, callback) => {
-	const options = {
+  const options = {
     hostname: `api.github.com`,
     port: 443,
     path: `/users/${username}`,
@@ -13,25 +13,22 @@ let get = (username, callback) => {
     }
   }
   let request = https.request(options, (response) => {
-    let body = ""
+    let body = ''
     response.on('data', (data) => {
       body = body + data
     })
 
     response.on('end', () => {
       if (response.statusCode === 200) {
-        let profile = JSON.parse(body)
-        callback(null, profile)
-
+        let profile = body
+        callback(null, JSON.parse(profile))
       } else {
-        callback("Error getting the data")
+        callback('Error getting the data')
       }
     })
-
   })
 
   request.end()
-
 }
 
 module.exports = {
